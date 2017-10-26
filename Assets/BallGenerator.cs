@@ -11,8 +11,15 @@ public class BallGenerator : MonoBehaviour {
         {
             GameObject Ball =
                 Instantiate(BallPrefab) as GameObject;
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Vector3 worldDir = ray.direction;
             Ball.GetComponent<BallController>().Shoot(
-                new Vector3(0, 0, 50.0f));
+                worldDir.normalized * 2000);
         }
 	}
+    private void OnCollisionEnter(Collision other)
+    {
+        Destroy(this.gameObject);
+    }
 }

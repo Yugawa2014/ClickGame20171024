@@ -14,7 +14,7 @@ public class BallController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        //Shoot(new Vector3(0, 0, -50.0f));
+        //Shoot(new Vector3(0, 200, 2000));
 	
 	}
 	
